@@ -1,0 +1,3902 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程</title>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.1.1">
+        <meta name="author" content="wizardforcel">
+        
+        
+    
+    <link rel="stylesheet" href="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/website(1).css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/13.html">
+    
+    
+    <link rel="prev" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/11.html">
+    
+
+    </head>
+    <body><div id="StayFocusd-infobar" style="display:none;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div>
+        
+<div class="book without-animation with-summary font-size-2 font-family-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.gitbook.com/book/wizardforcel/python-quant-uqer" target="_blank" class="custom-link">Python 量化交易教程</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/">
+            
+                    
+                    Python 量化交易教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="2.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/2.html">
+            
+                    
+                    第一部分 新手入门
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="3.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/3.html">
+            
+                    
+                    一 量化投资视频学习课程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="4.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/4.html">
+            
+                    
+                    二 Python 手把手教学
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="5.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/5.html">
+            
+                    
+                    量化分析师的Python日记【第1天：谁来给我讲讲Python？】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="6.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/6.html">
+            
+                    
+                    量化分析师的Python日记【第2天：再接着介绍一下Python呗】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="7.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/7.html">
+            
+                    
+                    量化分析师的Python日记【第3天：一大波金融Library来袭之numpy篇】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="8.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/8.html">
+            
+                    
+                    量化分析师的Python日记【第4天：一大波金融Library来袭之scipy篇】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="9.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/9.html">
+            
+                    
+                    量化分析师的Python日记【第5天：数据处理的瑞士军刀pandas】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.6" data-path="10.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/10.html">
+            
+                    
+                    量化分析师的Python日记【第6天：数据处理的瑞士军刀pandas下篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.7" data-path="11.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/11.html">
+            
+                    
+                    量化分析师的Python日记【第7天：Q Quant 之初出江湖】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.8" data-path="12.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html">
+            
+                    
+                    量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.9" data-path="13.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/13.html">
+            
+                    
+                    量化分析师的Python日记【第9天 Q Quant兵器谱之二叉树】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.10" data-path="14.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/14.html">
+            
+                    
+                    量化分析师的Python日记【第10天 Q Quant兵器谱 -之偏微分方程1】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.11" data-path="15.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/15.html">
+            
+                    
+                    量化分析师的Python日记【第11天 Q Quant兵器谱之偏微分方程2】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.12" data-path="16.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/16.html">
+            
+                    
+                    量化分析师的Python日记【第12天：量化入门进阶之葵花宝典：因子如何产生和回测】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.13" data-path="17.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/17.html">
+            
+                    
+                    量化分析师的Python日记【第13天 Q Quant兵器谱之偏微分方程3】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.14" data-path="18.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/18.html">
+            
+                    
+                    量化分析师的Python日记【第14天：如何在优矿上做Alpha对冲模型】
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.15" data-path="19.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/19.html">
+            
+                    
+                    量化分析师的Python日记【第15天：如何在优矿上搞一个wealthfront出来】
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="20.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/20.html">
+            
+                    
+                    第二部分 股票量化相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="21.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/21.html">
+            
+                    
+                    一 基本面分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="22.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/22.html">
+            
+                    
+                    1.1 alpha 多因子模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" data-path="23.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/23.html">
+            
+                    
+                    破解Alpha对冲策略——观《量化分析师Python日记第14天》有感
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2" data-path="24.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/24.html">
+            
+                    
+                    熔断不要怕， alpha model 为你保驾护航！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.3" data-path="25.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/25.html">
+            
+                    
+                    寻找 alpha 之: alpha 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="26.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/26.html">
+            
+                    
+                    1.2 基本面因子选股 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1" data-path="27.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/27.html">
+            
+                    
+                    Porfolio（现金比率+负债现金+现金保障倍数）+市盈率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="28.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/28.html">
+            
+                    
+                    ROE选股指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.3" data-path="29.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/29.html">
+            
+                    
+                    成交量因子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.4" data-path="30.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/30.html">
+            
+                    
+                    ROIC&amp;cashROIC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.5" data-path="31.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/31.html">
+            
+                    
+                    【国信金工】资产周转率选股模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.6" data-path="32.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/32.html">
+            
+                    
+                    【基本面指标】Cash Cow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.7" data-path="33.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/33.html">
+            
+                    
+                    量化因子选股——净利润／营业总收入
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.8" data-path="34.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/34.html">
+            
+                    
+                    营业收入增长率+市盈率
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="35.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/35.html">
+            
+                    
+                    1.3 财报阅读 • [米缸量化读财报] 资产负债表-投资相关资产
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="36.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/36.html">
+            
+                    
+                    1.4 股东分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.4.1" data-path="37.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/37.html">
+            
+                    
+                    技术分析入门 【2】 —— 大家抢筹码（06年至12年版）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4.2" data-path="38.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/38.html">
+            
+                    
+                    技术分析入门 【2】 —— 大家抢筹码（06年至12年版）— 更新版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4.3" data-path="39.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/39.html">
+            
+                    
+                    谁是中国A股最有钱的自然人
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="40.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/40.html">
+            
+                    
+                    1.5 宏观研究
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.5.1" data-path="41.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/41.html">
+            
+                    
+                    【干货包邮】手把手教你做宏观择时
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5.2" data-path="42.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/42.html">
+            
+                    
+                    宏观研究：从估值角度看当前市场
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5.3" data-path="43.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/43.html">
+            
+                    
+                    追寻“国家队”的足迹
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="44.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/44.html">
+            
+                    
+                    二 套利
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="45.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/45.html">
+            
+                    
+                    2.1 配对交易 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1.1" data-path="46.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/46.html">
+            
+                    
+                    HS300ETF套利（上）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.2" data-path="47.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/47.html">
+            
+                    
+                    【统计套利】配对交易
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.3" data-path="48.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/48.html">
+            
+                    
+                    相似公司股票搬砖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.1.4" data-path="49.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/49.html">
+            
+                    
+                    Paired trading
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="50.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/50.html">
+            
+                    
+                    2.2 期现套利 • 通过股指期货的期现差与 ETF 对冲套利
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="51.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/51.html">
+            
+                    
+                    三 事件驱动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="52.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/52.html">
+            
+                    
+                    3.1 盈利预增
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1.1" data-path="53.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/53.html">
+            
+                    
+                    盈利预增事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.1.2" data-path="54.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/54.html">
+            
+                    
+                    事件驱动策略示例——盈利预增
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="55.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/55.html">
+            
+                    
+                    3.2 分析师推荐 • 分析师的金手指？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="56.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/56.html">
+            
+                    
+                    3.3 牛熊转换 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.3.1" data-path="57.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/57.html">
+            
+                    
+                    历史总是相似 牛市还在延续
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3.2" data-path="58.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/58.html">
+            
+                    
+                    历史总是相似 牛市已经见顶？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="59.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/59.html">
+            
+                    
+                    3.4 熔断机制 • 股海拾贝之 [熔断错杀股] 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="60.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/60.html">
+            
+                    
+                    3.5 暴涨暴跌 • [实盘感悟] 遇上暴跌我该怎么做？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="61.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/61.html">
+            
+                    
+                    3.6 兼并重组、举牌收购 • 宝万战-大戏开幕
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="62.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/62.html">
+            
+                    
+                    四 技术分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="63.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/63.html">
+            
+                    
+                    4.1 布林带
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1.1" data-path="64.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/64.html">
+            
+                    
+                    布林带交易策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.2" data-path="65.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/65.html">
+            
+                    
+                    布林带回调系统-日内
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.3" data-path="66.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/66.html">
+            
+                    
+                    Conservative Bollinger Bands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.4" data-path="67.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/67.html">
+            
+                    
+                    Even More Conservative Bollinger Bands
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.5" data-path="68.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/68.html">
+            
+                    
+                    Simple Bollinger Bands
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="69.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/69.html">
+            
+                    
+                    4.2 均线系统 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.2.1" data-path="70.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/70.html">
+            
+                    
+                    技术分析入门 —— 双均线策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.2" data-path="71.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/71.html">
+            
+                    
+                    5日线10日线交易策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.3" data-path="72.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/72.html">
+            
+                    
+                    用5日均线和10日均线进行判断 --- 改进版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.4" data-path="73.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/73.html">
+            
+                    
+                    macross
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.5" data-path="74.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/74.html">
+            
+                    
+                    4.3 MACD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.6" data-path="75.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/75.html">
+            
+                    
+                    Simple MACD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.7" data-path="76.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/76.html">
+            
+                    
+                    MACD quantization trade
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2.8" data-path="77.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/77.html">
+            
+                    
+                    MACD平滑异同移动平均线方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="78.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/78.html">
+            
+                    
+                    4.4 阿隆指标 • 技术指标阿隆（ Aroon ）全解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="79.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/79.html">
+            
+                    
+                    4.5 CCI •  CCI 顺势指标探索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="80.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/80.html">
+            
+                    
+                    4.6 RSI 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.5.1" data-path="81.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/81.html">
+            
+                    
+                    重写 rsi 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5.2" data-path="82.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/82.html">
+            
+                    
+                    RSI指标策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.6" data-path="83.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/83.html">
+            
+                    
+                    4.7 DMI • DMI 指标体系的构建及简单应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.7" data-path="85.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/85.html">
+            
+                    
+                    4.8 EMV •  EMV 技术指标的构建及应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.8" data-path="86.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/86.html">
+            
+                    
+                    4.9 KDJ •  KDJ 策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.9" data-path="87.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/87.html">
+            
+                    
+                    4.10 CMO 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.9.1" data-path="88.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/88.html">
+            
+                    
+                    CMO 策略模仿练习 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.9.2" data-path="89.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/89.html">
+            
+                    
+                    CMO策略模仿练习2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.9.3" data-path="90.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/90.html">
+            
+                    
+                     [技术指标] CMO 
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.10" data-path="91.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/91.html">
+            
+                    
+                    4.11 FPC •  FPC 指标选股
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.11" data-path="92.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/92.html">
+            
+                    
+                    4.12 Chaikin Volatility
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.11.1" data-path="93.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/93.html">
+            
+                    
+                    嘉庆离散指标测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.12" data-path="94.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/94.html">
+            
+                    
+                    4.13 委比 • 实时计算委比
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.13" data-path="95.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/95.html">
+            
+                    
+                    4.14 封单量
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.13.1" data-path="96.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/96.html">
+            
+                    
+                    按照封单跟流通股本比例排序，剔除6月上市新股，前50
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.13.2" data-path="97.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/97.html">
+            
+                    
+                    涨停股票封单统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.13.3" data-path="98.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/98.html">
+            
+                    
+                    实时计算涨停板股票的封单资金与总流通市值的比例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.14" data-path="99.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/99.html">
+            
+                    
+                    4.15 成交量 • 决战之地， IF1507 ！
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.15" data-path="100.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/100.html">
+            
+                    
+                    4.16 K 线分析 • 寻找夜空中最亮的星
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="101.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/101.html">
+            
+                    
+                    五 量化模型 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="102.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/102.html">
+            
+                    
+                    5.1 动量模型 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1.1" data-path="103.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/103.html">
+            
+                    
+                    Momentum策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.2" data-path="104.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/104.html">
+            
+                    
+                    【小散学量化】-2-动量模型的简单实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.3" data-path="105.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/105.html">
+            
+                    
+                    一个追涨的策略(修正版)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.4" data-path="106.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/106.html">
+            
+                    
+                    动量策略（momentum driven）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.5" data-path="107.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/107.html">
+            
+                    
+                    动量策略（momentum driven）——修正版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.6" data-path="108.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/108.html">
+            
+                    
+                    最经典的Momentum和Contrarian在中国市场的测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.7" data-path="109.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/109.html">
+            
+                    
+                    最经典的Momentum和Contrarian在中国市场的测试-yanheven改进
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.8" data-path="110.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/110.html">
+            
+                    
+                    ［策略］基于胜率的趋势交易策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.9" data-path="111.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/111.html">
+            
+                    
+                    量化策略］Sharpe_Momentum (夏普率动量策略)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.10" data-path="112.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/112.html">
+            
+                    
+                    策略探讨（更新）：价量结合+动量反转
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.11" data-path="113.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/113.html">
+            
+                    
+                    反向动量策略（reverse momentum driven）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.12" data-path="114.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/114.html">
+            
+                    
+                    轻松跑赢大盘 - 主题Momentum策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.1.13" data-path="115.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/115.html">
+            
+                    
+                    Contrarian strategy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="116.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/116.html">
+            
+                    
+                    5.2 Joseph Piotroski 9 F-Score Value Investing Model · 基本面选股系统：Piotroski F-Score ranking system
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.3" data-path="117.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/117.html">
+            
+                    
+                    5.3 SVR · 使用SVR预测股票开盘价 v1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4" data-path="118.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/118.html">
+            
+                    
+                    5.4 决策树、随机树 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.4.1" data-path="119.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/119.html">
+            
+                    
+                    决策树模型（固定模型）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.4.2" data-path="120.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/120.html">
+            
+                    
+                    基于Random Forest的决策策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.5" data-path="121.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/121.html">
+            
+                    
+                    5.5 钟摆理论 · 钟摆理论的简单实现——完美躲过股灾和精准抄底
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6" data-path="122.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/122.html">
+            
+                    
+                    5.6 海龟模型 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.6.1" data-path="123.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/123.html">
+            
+                    
+                    simple turtle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.6.2" data-path="124.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/124.html">
+            
+                    
+                    侠之大者 一起赚钱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.7" data-path="125.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/125.html">
+            
+                    
+                    5.7 5217 策略 · 白龙马的新手策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.8" data-path="126.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/126.html">
+            
+                    
+                    5.8 SMIA · 基于历史状态空间相似性匹配的行业配置 SMIA 模型—取交集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.9" data-path="127.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/127.html">
+            
+                    
+                    5.9 神经网络 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.9.1" data-path="128.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/128.html">
+            
+                    
+                    神经网络交易的训练部分
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.9.2" data-path="129.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/129.html">
+            
+                    
+                    通过神经网络进行交易
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.10" data-path="130.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/130.html">
+            
+                    
+                    5.10 PAMR · PAMR ： 基于均值反转的投资组合选择策略 - 修改版
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.11" data-path="131.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/131.html">
+            
+                    
+                    5.11 Fisher Transform · Using Fisher Transform Indicator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.12" data-path="133.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/133.html">
+            
+                    
+                    5.12 分型假说， Hurst 指数 · 分形市场假说，一个听起来很美的假说
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.13" data-path="134.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/134.html">
+            
+                    
+                    5.13 变点理论 · 变点策略初步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.14" data-path="135.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/135.html">
+            
+                    
+                    5.14 Z-score Model 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.14.1" data-path="136.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/136.html">
+            
+                    
+                    Zscore Model Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.14.2" data-path="137.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/137.html">
+            
+                    
+                    信用债风险模型初探之：Z-Score Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.14.3" data-path="138.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/138.html">
+            
+                    
+                    user-defined package
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.15" data-path="139.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/139.html">
+            
+                    
+                    5.15 机器学习 · Machine Learning 学习笔记（一） by OTreeWEN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.16" data-path="141.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/141.html">
+            
+                    
+                    5.16 DualTrust 策略和布林强盗策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.17" data-path="142.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/142.html">
+            
+                    
+                    5.17 卡尔曼滤波 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.18" data-path="143.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/143.html">
+            
+                    
+                    5.18 LPPL anti-bubble model 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.18.1" data-path="144.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/144.html">
+            
+                    
+                    今天大盘熔断大跌，后市如何—— based on LPPL anti-bubble model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.18.2" data-path="145.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/145.html">
+            
+                    
+                    破解股市泡沫之谜——对数周期幂率（LPPL）模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="146.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/146.html">
+            
+                    
+                    六 大数据模型 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="147.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/147.html">
+            
+                    
+                    6.1 市场情绪分析 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1.1" data-path="148.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/148.html">
+            
+                    
+                    通联情绪指标策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.1.2" data-path="149.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/149.html">
+            
+                    
+                    互联网+量化投资 大数据指数手把手
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="150.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/150.html">
+            
+                    
+                    6.2 新闻热点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.2.1" data-path="151.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/151.html">
+            
+                    
+                    如何使用优矿之“新闻热点”？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2.2" data-path="152.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/152.html">
+            
+                    
+                    技术分析【3】—— 众星拱月，众口铄金?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="153.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/153.html">
+            
+                    
+                    七 排名选股系统 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="154.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/154.html">
+            
+                    
+                    7.1 小市值投资法 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1.1" data-path="155.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/155.html">
+            
+                    
+                    学习笔记：可模拟（小市值+便宜 的修改版）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.1.2" data-path="156.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/156.html">
+            
+                    
+                    市值最小300指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.1.3" data-path="157.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/157.html">
+            
+                    
+                    流通市值最小股票（新筛选器版）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.1.4" data-path="158.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/158.html">
+            
+                    
+                    持有市值最小的10只股票
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.1.5" data-path="159.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/159.html">
+            
+                    
+                    10% smallest cap stock
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2" data-path="160.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/160.html">
+            
+                    
+                    7.2 羊驼策略 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.2.1" data-path="161.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/161.html">
+            
+                    
+                    羊驼策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.2" data-path="162.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/162.html">
+            
+                    
+                    羊驼反转策略（修改版）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.3" data-path="163.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/163.html">
+            
+                    
+                    羊驼反转策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.2.4" data-path="164.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/164.html">
+            
+                    
+                    我的羊驼策略，选5只股无脑轮替
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3" data-path="165.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/165.html">
+            
+                    
+                    7.3 低价策略 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.3.1" data-path="166.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/166.html">
+            
+                    
+                    专捡便宜货(新版quartz)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3.2" data-path="167.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/167.html">
+            
+                    
+                    策略原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7.3.3" data-path="168.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/168.html">
+            
+                    
+                    便宜就是 alpha
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="169.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/169.html">
+            
+                    
+                    八 轮动模型 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="170.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/170.html">
+            
+                    
+                    8.1 大小盘轮动 · 新手上路 -- 二八ETF择时轮动策略2.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2" data-path="171.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/171.html">
+            
+                    
+                    8.2 季节性策略 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.2.1" data-path="172.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/172.html">
+            
+                    
+                    Halloween Cycle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2.2" data-path="173.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/173.html">
+            
+                    
+                    Halloween cycle 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2.3" data-path="174.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/174.html">
+            
+                    
+                    夏买电，东买煤？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.2.4" data-path="175.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/175.html">
+            
+                    
+                    历史的十一月板块涨幅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.3" data-path="176.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/176.html">
+            
+                    
+                    8.3 行业轮动 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.3.1" data-path="177.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/177.html">
+            
+                    
+                    银行股轮动
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.3.2" data-path="178.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/178.html">
+            
+                    
+                    申万二级行业在最近1年、3个月、5个交易日的涨幅统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4" data-path="179.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/179.html">
+            
+                    
+                    8.4 主题轮动 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.4.1" data-path="180.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/180.html">
+            
+                    
+                    快速研究主题神器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4.2" data-path="181.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/181.html">
+            
+                    
+                    recommendation based on subject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4.3" data-path="182.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/182.html">
+            
+                    
+                    strategy7: recommendation based on theme
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4.4" data-path="183.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/183.html">
+            
+                    
+                    板块异动类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.4.5" data-path="184.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/184.html">
+            
+                    
+                    风险因子（离散类）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5" data-path="185.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/185.html">
+            
+                    
+                    8.5 龙头轮动
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.5.1" data-path="186.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/186.html">
+            
+                    
+                    Competitive Securities 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5.2" data-path="187.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/187.html">
+            
+                    
+                    Market Competitiveness
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8.5.3" data-path="188.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/188.html">
+            
+                    
+                    主题龙头类
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="189.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/189.html">
+            
+                    
+                    九 组合投资 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.9.1" data-path="190.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/190.html">
+            
+                    
+                    9.1 指数跟踪 · [策略] 指数跟踪低成本建仓策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.2" data-path="191.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/191.html">
+            
+                    
+                    9.2 GMVP · Global Minimum Variance Portfolio (GMVP)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.3" data-path="192.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/192.html">
+            
+                    
+                    9.3 凸优化 · 如何在 Python 中利用 CVXOPT 求解二次规划问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="193.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/193.html">
+            
+                    
+                    十 波动率 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.1" data-path="194.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/194.html">
+            
+                    
+                    10.1 波动率选股 · 风平浪静 风起猪飞
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.2" data-path="195.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/195.html">
+            
+                    
+                    10.2 波动率择时 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.2.1" data-path="196.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/196.html">
+            
+                    
+                    基于 VIX 指数的择时策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.2.2" data-path="197.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/197.html">
+            
+                    
+                    简单低波动率指数
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10.3" data-path="198.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/198.html">
+            
+                    
+                    10.3 Arch/Garch 模型 · 如何使用优矿进行 GARCH 模型分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="199.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/199.html">
+            
+                    
+                    十一 算法交易 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.11.1" data-path="200.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/200.html">
+            
+                    
+                    11.1 VWAP · Value-Weighted Average Price (VWAP)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="201.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/201.html">
+            
+                    
+                    十二 中高频交易 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.12.1" data-path="202.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/202.html">
+            
+                    
+                    12.1 order book 分析 · 基于高频 limit order book 数据的短程价格方向预测—— via multi-class SVM 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12.2" data-path="203.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/203.html">
+            
+                    
+                    12.2 日内交易 · 大盘日内走势 (for 择时)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="204.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/204.html">
+            
+                    
+                    十三 Alternative Strategy 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.13.1" data-path="205.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/205.html">
+            
+                    
+                    13.1 易经、传统文化 · 老黄历诊股
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="206.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/206.html">
+            
+                    
+                    第三部分 基金、利率互换、固定收益类 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="207.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/207.html">
+            
+                    
+                    一 分级基金 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="208.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/208.html">
+            
+                    
+                    “优矿”集思录——分级基金专题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="209.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/209.html">
+            
+                    
+                    基于期权定价的分级基金交易策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="210.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/210.html">
+            
+                    
+                    基于期权定价的兴全合润基金交易策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="211.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/211.html">
+            
+                    
+                    二 基金分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="212.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/212.html">
+            
+                    
+                    Alpha 基金“黑天鹅事件” -- 思考以及原因
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="213.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/213.html">
+            
+                    
+                    三 债券 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="214.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/214.html">
+            
+                    
+                    债券报价中的小陷阱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="215.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/215.html">
+            
+                    
+                    四 利率互换 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="216.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/216.html">
+            
+                    
+                    Swap Curve Construction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="217.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/217.html">
+            
+                    
+                    中国 Repo 7D 互换的例子
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="218.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/218.html">
+            
+                    
+                    第四部分 衍生品相关 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="219.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/219.html">
+            
+                    
+                    一 期权数据 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="220.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/220.html">
+            
+                    
+                    如何获取期权市场数据快照
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="221.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/221.html">
+            
+                    
+                    期权高频数据准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="222.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/222.html">
+            
+                    
+                    二 期权系列 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="223.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/223.html">
+            
+                    
+                    [ 50ETF 期权] 1. 历史成交持仓和 PCR 数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="224.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/224.html">
+            
+                    
+                    【50ETF期权】 2. 历史波动率
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="225.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/225.html">
+            
+                    
+                    【50ETF期权】 3. 中国波指 iVIX
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="226.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/226.html">
+            
+                    
+                    【50ETF期权】 4. Greeks 和隐含波动率微笑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="228.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/228.html">
+            
+                    
+                    【50ETF期权】 5. 日内即时监控 Greeks 和隐含波动率微笑
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="229.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/229.html">
+            
+                    
+                    【50ETF期权】 5. 日内即时监控 Greeks 和隐含波动率微笑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="230.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/230.html">
+            
+                    
+                    三 期权分析 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="231.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/231.html">
+            
+                    
+                    【50ETF期权】 期权择时指数 1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.2" data-path="232.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/232.html">
+            
+                    
+                    每日期权风险数据整理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.3" data-path="233.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/233.html">
+            
+                    
+                    期权头寸计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.4" data-path="234.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/234.html">
+            
+                    
+                    期权探秘1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.5" data-path="235.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/235.html">
+            
+                    
+                    期权探秘2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.6" data-path="236.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/236.html">
+            
+                    
+                    期权市场一周纵览
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.7" data-path="237.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/237.html">
+            
+                    
+                    基于期权PCR指数的择时策略
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3.8" data-path="238.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/238.html">
+            
+                    
+                    期权每日成交额PC比例计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="239.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/239.html">
+            
+                    
+                    四 期货分析 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="240.html">
+            
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/240.html">
+            
+                    
+                    【前方高能！】Gifts from Santa Claus——股指期货趋势交易研究
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html#"><i class="fa fa-align-justify"></i></a><div class="dropdown pull-right  js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Share" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html#"><i class="fa fa-share-alt"></i></a><div class="dropdown-menu dropdown-left"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-5 ">Facebook</button><button class="button size-5 ">Google+</button><button class="button size-5 ">Twitter</button><button class="button size-5 ">Weibo</button><button class="button size-5 ">Instapaper</button></div></div></div><a class="btn pull-right js-toolbar-action" aria-label="" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html#"><i class="fa fa-facebook"></i></a><a class="btn pull-right js-toolbar-action" aria-label="" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html#"><i class="fa fa-twitter"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/12.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/">量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="量化分析师的python日记【第8天-q-quant兵器谱之函数插值】">量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】</h1>
+<blockquote>
+<p class="comments-section">来源：<a href="https://uqer.io/community/share/551cfa1ff9f06c8f339044ff" target="_blank">https://uqer.io/community/share/551cfa1ff9f06c8f339044ff</a><div class="comments-icon"><div class="marker">+</div></div></p>
+<p class="comments-section">在本篇中，我们将介绍Q宽客常用工具之一：函数插值。接着将函数插值应用于一个实际的金融建模场景中：波动率曲面构造。<div class="comments-icon"><div class="marker">+</div></div></p>
+<p class="comments-section">通过本篇的学习您将学习到：<div class="comments-icon"><div class="marker">+</div></div></p>
+<ol>
+<li>如何在<code>scipy</code>中使用函数插值模块：<code>interpolate</code>；</li>
+<li>波动率曲面构造的原理；</li>
+<li>将<code>interpolate</code>运用于波动率曲面构造。</li>
+</ol>
+</blockquote>
+<h2 id="1-如何使用scipy做函数插值">1. 如何使用<code>scipy</code>做函数插值</h2>
+<p class="comments-section">函数插值，即在离散数据的基础上补插连续函数，估算出函数在其他点处的近似值的方法。在<code>scipy</code>中，所有的与函数插值相关的功能都在<code>scipy.interpolate</code>模块中<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> scipy <span class="hljs-keyword">import</span> interpolate
+dir(interpolate)[:<span class="hljs-number">5</span>]
+
+[<span class="hljs-string">'Akima1DInterpolator'</span>,
+ <span class="hljs-string">'BPoly'</span>,
+ <span class="hljs-string">'BarycentricInterpolator'</span>,
+ <span class="hljs-string">'BivariateSpline'</span>,
+ <span class="hljs-string">'CloughTocher2DInterpolator'</span>]
+</code></pre>
+<p class="comments-section">作为介绍性质的本篇，我们将只关注<code>interpolate.spline</code>的使用，即样条插值方法：<div class="comments-icon"><div class="marker">+</div></div></p>
+<ul>
+<li><code>xk</code>离散的自变量值，为序列</li>
+<li><code>yk</code>对应<code>xk</code>的函数值，为与<code>xk</code>长度相同的序列</li>
+<li><code>xnew</code>需要进行插值的自变量值序列</li>
+<li><code>order</code>样条插值使用的函数基德阶数，为1时使用线性函数</li>
+</ul>
+<pre><code class="lang-py">print interpolate.spline.__doc__
+
+Interpolate a curve at new points using a spline fit
+
+Parameters
+----------
+xk, yk : array_like
+    The x and y values that define the curve.
+xnew : array_like
+    The x values where spline should estimate the y values.
+order : int
+    Default is 3.
+kind : string
+    One of {'smoothest'}
+conds : Don't know
+    Don't know
+
+Returns
+-------
+spline : ndarray
+    An array of y values; the spline evaluated at the positions `xnew`.
+</code></pre>
+<h3 id="11-三角函数（npsin）插值">1.1 三角函数（<code>np.sin</code>）插值</h3>
+<p class="comments-section">一例胜千言！让我们这里用实际的一个示例，来说明如何在<code>scipy</code>中使用函数插值。这里的目标函数是三角函数：<div class="comments-icon"><div class="marker">+</div></div></p>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/20160729202654.jpg" alt=""></p>
+<p class="comments-section">假设我们已经观测到的<code>f(x)</code>在离散点<code>x=(1,3,5,7,9,11,13)</code>的值：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> pylab
+<span class="hljs-keyword">import</span> seaborn <span class="hljs-keyword">as</span> sns
+font.set_size(<span class="hljs-number">20</span>)
+x = np.linspace(<span class="hljs-number">1.0</span>, <span class="hljs-number">13.0</span>, <span class="hljs-number">7</span>)
+y = np.sin(x)
+pylab.figure(figsize = (<span class="hljs-number">12</span>,<span class="hljs-number">6</span>))
+pylab.scatter(x,y, s = <span class="hljs-number">85</span>, marker=<span class="hljs-string">'x'</span>, color = <span class="hljs-string">'r'</span>)
+pylab.title(<span class="hljs-string">u'$f(x)$离散点分布'</span>, fontproperties = font)
+
+&lt;matplotlib.text.Text at <span class="hljs-number">0x142cafd0</span>&gt;
+</code></pre>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/D1WE+omWGBOYAAAAAElFTkSuQmCC.png" alt=""></p>
+<p class="comments-section">首先我们使用最简单的线性插值算法，这里面只要将<code>spline</code>的参数<code>order</code>设置为1即可：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">xnew = np.linspace(<span class="hljs-number">1.0</span>,<span class="hljs-number">13.0</span>,<span class="hljs-number">500</span>)
+ynewLinear = interpolate.spline(x,y,xnew,order = <span class="hljs-number">1</span>)
+ynewLinear[:<span class="hljs-number">5</span>]
+
+array([ <span class="hljs-number">0.84147098</span>,  <span class="hljs-number">0.83304993</span>,  <span class="hljs-number">0.82462888</span>,  <span class="hljs-number">0.81620782</span>,  <span class="hljs-number">0.80778677</span>])
+</code></pre>
+<p class="comments-section">复杂一些的，也是<code>spline</code>函数默认的方法，即为样条插值，将<code>order</code>设置为3即可：<div class="comments-icon"><div class="marker">+</div></div></p>
+<p class="comments-section">最后我们获得真实的<code>sin(x)</code>的值：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">ynewReal = np.sin(xnew)
+ynewReal[:<span class="hljs-number">5</span>]
+
+array([ <span class="hljs-number">0.84147098</span>,  <span class="hljs-number">0.85421967</span>,  <span class="hljs-number">0.86647437</span>,  <span class="hljs-number">0.87822801</span>,  <span class="hljs-number">0.88947378</span>])
+</code></pre>
+<p class="comments-section">让我们把所有的函数画到一起，看一下插值的效果。对于我们这个例子中的目标函数而言，由于本身目标函数是光滑函数，则越高阶的样条插值的方法，插值效果越好。<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">pylab.figure(figsize = (<span class="hljs-number">16</span>,<span class="hljs-number">8</span>))
+pylab.plot(xnew,ynewReal)
+pylab.plot(xnew,ynewLinear)
+pylab.plot(xnew,ynewCubicSpline)
+pylab.scatter(x,y, s = <span class="hljs-number">160</span>, marker=<span class="hljs-string">'x'</span>, color = <span class="hljs-string">'k'</span>)
+pylab.legend([<span class="hljs-string">u'真实曲线'</span>, <span class="hljs-string">u'线性插值'</span>, <span class="hljs-string">u'样条插值'</span>, <span class="hljs-string">u'$f(x)$离散点'</span>], prop = font)
+pylab.title(<span class="hljs-string">u'$f(x)$不同插值方法拟合效果：线性插值 v.s 样条插值'</span>, fontproperties = font)
+
+&lt;matplotlib.text.Text at <span class="hljs-number">0x1424cd50</span>&gt;
+</code></pre>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/VNWoGenDKYQAAAABJRU5ErkJggg==.png" alt=""></p>
+<h2 id="2-函数插值应用-——-期权波动率曲面构造">2. 函数插值应用 —— 期权波动率曲面构造</h2>
+<p class="comments-section">市场上期权价格一般以隐含波动率的形式报出，一般来讲在市场交易时间，交易员可以看到类似的波动率矩阵（Volatilitie Matrix):<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+pd.options.display.float_format = <span class="hljs-string">'{:,&gt;.2f}'</span>.format
+dates = [Date(<span class="hljs-number">2015</span>,<span class="hljs-number">3</span>,<span class="hljs-number">25</span>), Date(<span class="hljs-number">2015</span>,<span class="hljs-number">4</span>,<span class="hljs-number">25</span>), Date(<span class="hljs-number">2015</span>,<span class="hljs-number">6</span>,<span class="hljs-number">25</span>), Date(<span class="hljs-number">2015</span>,<span class="hljs-number">9</span>,<span class="hljs-number">25</span>)]
+strikes = [<span class="hljs-number">2.2</span>, <span class="hljs-number">2.3</span>, <span class="hljs-number">2.4</span>, <span class="hljs-number">2.5</span>, <span class="hljs-number">2.6</span>]
+blackVolMatrix = np.array([[ <span class="hljs-number">0.32562851</span>,  <span class="hljs-number">0.29746885</span>,  <span class="hljs-number">0.29260648</span>,  <span class="hljs-number">0.27679993</span>],
+                  [ <span class="hljs-number">0.28841840</span>,  <span class="hljs-number">0.29196629</span>,  <span class="hljs-number">0.27385023</span>,  <span class="hljs-number">0.26511898</span>],
+                  [ <span class="hljs-number">0.27659511</span>,  <span class="hljs-number">0.27350773</span>,  <span class="hljs-number">0.25887604</span>,  <span class="hljs-number">0.25283775</span>],
+                  [ <span class="hljs-number">0.26969754</span>,  <span class="hljs-number">0.25565971</span>,  <span class="hljs-number">0.25803327</span>,  <span class="hljs-number">0.25407669</span>],
+                  [ <span class="hljs-number">0.27773032</span>,  <span class="hljs-number">0.24823248</span>,  <span class="hljs-number">0.27340796</span>,  <span class="hljs-number">0.24814975</span>]])
+table = pd.DataFrame(blackVolMatrix * <span class="hljs-number">100</span>, index = strikes, columns = dates, )
+table.index.name = <span class="hljs-string">u'行权价'</span>
+table.columns.name = <span class="hljs-string">u'到期时间'</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">u'2015年3月3日10时波动率矩阵'</span>
+table
+
+<span class="hljs-number">2015</span>年<span class="hljs-number">3</span>月<span class="hljs-number">3</span>日<span class="hljs-number">10</span>时波动率矩阵
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>到期时间</th>
+<th>March 25th, 2015</th>
+<th>April 25th, 2015</th>
+<th>June 25th, 2015</th>
+<th>September 25th, 2015</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>行权价</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.20</td>
+<td>32.56</td>
+<td>29.75</td>
+<td>29.26</td>
+<td>27.68</td>
+</tr>
+<tr>
+<td>2.30</td>
+<td>28.84</td>
+<td>29.20</td>
+<td>27.39</td>
+<td>26.51</td>
+</tr>
+<tr>
+<td>2.40</td>
+<td>27.66</td>
+<td>27.35</td>
+<td>25.89</td>
+<td>25.28</td>
+</tr>
+<tr>
+<td>2.50</td>
+<td>26.97</td>
+<td>25.57</td>
+<td>25.80</td>
+<td>25.41</td>
+</tr>
+<tr>
+<td>2.60</td>
+<td>27.77</td>
+<td>24.82</td>
+<td>27.34</td>
+<td>24.81</td>
+</tr>
+</tbody>
+</table>
+<p class="comments-section">交易员可以看到市场上离散值的信息，但是如果可以获得一些隐含的信息更好：例如，在2015年6月25日以及2015年9月25日之间，波动率的形状会是怎么样的？<div class="comments-icon"><div class="marker">+</div></div></p>
+<h3 id="21-方差曲面插值">2.1 方差曲面插值</h3>
+<p class="comments-section">我们并不是直接在波动率上进行插值，而是在方差矩阵上面进行插值。方差和波动率的关系如下：<div class="comments-icon"><div class="marker">+</div></div></p>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/20160729203018.jpg" alt=""></p>
+<p class="comments-section">所以下面我们将通过处理，获取方差矩阵（Variance Matrix):<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">evaluationDate = Date(<span class="hljs-number">2015</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)
+ttm = np.array([(d - evaluationDate) / <span class="hljs-number">365.0</span> <span class="hljs-keyword">for</span> d <span class="hljs-keyword">in</span> dates])
+varianceMatrix = (blackVolMatrix**<span class="hljs-number">2</span>) * ttm
+varianceMatrix
+
+array([[ <span class="hljs-number">0.00639109</span>,  <span class="hljs-number">0.0128489</span> ,  <span class="hljs-number">0.02674114</span>,  <span class="hljs-number">0.04324205</span>],
+       [ <span class="hljs-number">0.0050139</span> ,  <span class="hljs-number">0.01237794</span>,  <span class="hljs-number">0.02342277</span>,  <span class="hljs-number">0.03966943</span>],
+       [ <span class="hljs-number">0.00461125</span>,  <span class="hljs-number">0.01086231</span>,  <span class="hljs-number">0.02093128</span>,  <span class="hljs-number">0.03607931</span>],
+       [ <span class="hljs-number">0.00438413</span>,  <span class="hljs-number">0.0094909</span> ,  <span class="hljs-number">0.02079521</span>,  <span class="hljs-number">0.03643376</span>],
+       [ <span class="hljs-number">0.00464918</span>,  <span class="hljs-number">0.00894747</span>,  <span class="hljs-number">0.02334717</span>,  <span class="hljs-number">0.03475378</span>]])
+</code></pre>
+<p class="comments-section">这里的值<code>varianceMatrix</code>就是变换而得的方差矩阵。<div class="comments-icon"><div class="marker">+</div></div></p>
+<p class="comments-section">下面我们将在行权价方向以及时间方向同时进行线性插值，具体地，行权价方向：<div class="comments-icon"><div class="marker">+</div></div></p>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/20160729203052.jpg" alt=""></p>
+<p class="comments-section">时间方向：<div class="comments-icon"><div class="marker">+</div></div></p>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/20160729203108.jpg" alt=""></p>
+<p class="comments-section">这个过程在<code>scipy</code>中可以直接通过<code>interpolate</code>模块下<code>interp2d</code>来实现：<div class="comments-icon"><div class="marker">+</div></div></p>
+<ul>
+<li><code>ttm</code> 时间方向离散点</li>
+<li><code>strikes</code> 行权价方向离散点</li>
+<li><code>varianceMatrix</code> 方差矩阵，列对应时间维度；行对应行权价维度</li>
+<li><code>kind = 'linear'</code> 指示插值以线性方式进行</li>
+</ul>
+<pre><code class="lang-py">interp = interpolate.interp2d(ttm, strikes, varianceMatrix, kind = <span class="hljs-string">'linear'</span>)
+</code></pre>
+<p class="comments-section">返回的<code>interp</code>对象可以用于获取任意点上插值获取的方差值：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">interp(ttm[<span class="hljs-number">0</span>], strikes[<span class="hljs-number">0</span>])
+
+array([ <span class="hljs-number">0.00639109</span>])
+</code></pre>
+<p class="comments-section">最后我们获取整个平面上所有点的方差值，再转换为波动率曲面。<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">sMeshes = np.linspace(strikes[<span class="hljs-number">0</span>], strikes[<span class="hljs-number">-1</span>], <span class="hljs-number">400</span>)
+tMeshes = np.linspace(ttm[<span class="hljs-number">0</span>], ttm[<span class="hljs-number">-1</span>], <span class="hljs-number">200</span>)
+interpolatedVarianceSurface = np.zeros((len(sMeshes), len(tMeshes)))
+<span class="hljs-keyword">for</span> i, s <span class="hljs-keyword">in</span> enumerate(sMeshes):
+    <span class="hljs-keyword">for</span> j, t <span class="hljs-keyword">in</span> enumerate(tMeshes):
+        interpolatedVarianceSurface[i][j] = interp(t,s)
+
+interpolatedVolatilitySurface = np.sqrt((interpolatedVarianceSurface / tMeshes))
+<span class="hljs-keyword">print</span> <span class="hljs-string">u'行权价方向网格数：'</span>, np.size(interpolatedVolatilitySurface, <span class="hljs-number">0</span>)
+<span class="hljs-keyword">print</span> <span class="hljs-string">u'到期时间方向网格数：'</span>, np.size(interpolatedVolatilitySurface, <span class="hljs-number">1</span>)
+
+行权价方向网格数： <span class="hljs-number">400</span>
+到期时间方向网格数： <span class="hljs-number">200</span>
+</code></pre>
+<p class="comments-section">选取某一个到期时间上的波动率点，看一下插值的效果。这里我们选择到期时间最近的点：2015年3月25日：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py">pylab.figure(figsize = (<span class="hljs-number">16</span>,<span class="hljs-number">8</span>))
+pylab.plot(sMeshes, interpolatedVolatilitySurface[:, <span class="hljs-number">0</span>])
+pylab.scatter(x = strikes, y = blackVolMatrix[:,<span class="hljs-number">0</span>], s = <span class="hljs-number">160</span>,marker = <span class="hljs-string">'x'</span>, color = <span class="hljs-string">'r'</span>)
+pylab.legend([<span class="hljs-string">u'波动率（线性插值）'</span>, <span class="hljs-string">u'波动率（离散）'</span>], prop = font)
+pylab.title(<span class="hljs-string">u'到期时间为2015年3月25日期权波动率'</span>, fontproperties = font)
+
+&lt;matplotlib.text.Text at <span class="hljs-number">0xea27f90</span>&gt;
+</code></pre>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/BIlSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkSZIkqVz+D1MPBoGYlEthAAAAAElFTkSuQmCC.png" alt=""></p>
+<p class="comments-section">最终，我们把整个曲面的图像画出来看看：<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code class="lang-py"><span class="hljs-keyword">from</span> mpl_toolkits.mplot3d <span class="hljs-keyword">import</span> Axes3D
+<span class="hljs-keyword">from</span> matplotlib <span class="hljs-keyword">import</span> cm
+
+maturityMesher, strikeMesher = np.meshgrid(tMeshes, sMeshes)
+pylab.figure(figsize = (<span class="hljs-number">16</span>,<span class="hljs-number">9</span>))
+ax = pylab.gca(projection = <span class="hljs-string">'3d'</span>)
+surface = ax.plot_surface(strikeMesher, maturityMesher, interpolatedVolatilitySurface*<span class="hljs-number">100</span>, cmap = cm.jet)
+pylab.colorbar(surface,shrink=<span class="hljs-number">0.75</span>)
+pylab.title(<span class="hljs-string">u'2015年3月3日10时波动率曲面'</span>, fontproperties = font)
+pylab.xlabel(<span class="hljs-string">"strike"</span>)
+pylab.ylabel(<span class="hljs-string">"maturity"</span>)
+ax.set_zlabel(<span class="hljs-string">r"volatility(%)"</span>)
+
+&lt;matplotlib.text.Text at <span class="hljs-number">0x14e03050</span>&gt;
+</code></pre>
+<p><img src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/s4cKR2IsQAAAAASUVORK5CYII=.png" alt=""></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/11.html" class="navigation navigation-prev " aria-label="Previous page: 量化分析师的Python日记【第7天：Q Quant 之初出江湖】">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="https://wizardforcel.gitbooks.io/python-quant-uqer/content/13.html" class="navigation navigation-next " aria-label="Next page: 量化分析师的Python日记【第9天 Q Quant兵器谱之二叉树】" style="margin-right: 16px;">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script async="" src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/analytics.js.下载"></script><script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】","level":"1.2.2.8","depth":3,"next":{"title":"量化分析师的Python日记【第9天 Q Quant兵器谱之二叉树】","level":"1.2.2.9","depth":3,"path":"13.md","ref":"13.md","articles":[]},"previous":{"title":"量化分析师的Python日记【第7天：Q Quant 之初出江湖】","level":"1.2.2.7","depth":3,"path":"11.md","ref":"11.md","articles":[]},"dir":"ltr"},"config":{"plugins":["comment"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"comment":{"highlightCommented":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wizardforcel","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Python 量化交易教程","language":"zh","links":{"sidebar":{"Python 量化交易教程":"https://www.gitbook.com/book/wizardforcel/python-quant-uqer"},"gitbook":true},"gitbook":"*","description":""},"file":{"path":"12.md","mtime":"2016-07-31T04:03:23.000Z","type":"markdown"},"gitbook":{"version":"3.1.1","time":"2016-07-31T04:01:49.733Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/gitbook.js.下载"></script>
+    <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/theme.js.下载"></script>
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/plugin.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/search-engine.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/search.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/lunr.min.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/search-lunr.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/buttons.js.下载"></script>
+        
+    
+        
+        <script src="./量化分析师的Python日记【第8天 Q Quant兵器谱之函数插值】 · Python 量化交易教程_files/fontsettings.js.下载"></script>
+        
+    
+
+    
+<div><script style="display: none;" type="application/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57505611-7', 'auto', {name: 'microcdn'});
+  ga('microcdn.send', 'pageview');
+
+  var _cdn_prev_loc = window.location.pathname;
+  window.setInterval(function () {
+    if (window.location.pathname !== _cdn_prev_loc) {
+      _cdn_prev_loc = window.location.pathname;
+      ga('microcdn.send', 'pageview');
+    }
+  }, 100);
+
+</script></div>
+
+
+
+</body></html>
